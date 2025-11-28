@@ -1,0 +1,18 @@
+[metadata]
+name = "consul"
+description = "Service mesh solution"
+homepage = "https://www.consul.io/"
+version_format = "semver"
+
+[version]
+github_repo = "hashicorp/consul"
+
+[[steps]]
+action = "hashicorp_release"
+product = "consul"
+binary = "consul"
+verify_signature = false
+
+[verify]
+command = "consul version"
+pattern = "{version}"
