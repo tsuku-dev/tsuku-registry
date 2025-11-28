@@ -1,0 +1,47 @@
+name: Validate Recipes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate TOML syntax
+        run: |
+          pip install toml
+          python3 << 'EOF'
+          import os
+          import sys
+          import toml
+
+          errors = []
+          for root, dirs, files in os.walk('recipes'):
+              for f in files:
+                  if f.endswith('.toml'):
+                      path = os.path.join(root, f)
+                      try:
+                          with open(path) as fp:
+                              data = toml.load(fp)
+                          # Check required fields
+                          if 'metadata' not in data:
+                              errors.append(f"{path}: missing [metadata] section")
+                          elif 'name' not in data['metadata']:
+                              errors.append(f"{path}: missing metadata.name")
+                          if 'steps' not in data:
+                              errors.append(f"{path}: missing [[steps]] section")
+                      except toml.TomlDecodeError as e:
+                          errors.append(f"{path}: {e}")
+
+          if errors:
+              for e in errors:
+                  print(f"ERROR: {e}", file=sys.stderr)
+              sys.exit(1)
+          else:
+              print(f"Validated {sum(1 for _ in os.walk('recipes') for f in _[2] if f.endswith('.toml'))} recipes")
+          EOF
