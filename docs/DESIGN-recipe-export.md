@@ -1,6 +1,6 @@
 # Design: Recipe Metadata Export for tsuku.dev
 
-**Status**: Proposed
+**Status**: Accepted
 
 ## Context and Problem Statement
 
