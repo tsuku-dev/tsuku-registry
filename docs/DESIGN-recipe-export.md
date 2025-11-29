@@ -1,6 +1,6 @@
 # Design: Recipe Metadata Export for tsuku.dev
 
-**Status**: Accepted
+**Status**: Planned
 
 ## Context and Problem Statement
 
@@ -539,3 +539,12 @@ permissions:
 
 6. **Dependency management**: Use Python 3.11+ standard library only (`tomllib`, `pathlib`, `json`). No external pip dependencies.
 
+## Implementation Issues
+
+### Milestone: Recipe Metadata Export
+
+- [#3](https://github.com/tsuku-dev/tsuku-registry/issues/3): feat: add recipe metadata generation script
+- [#4](https://github.com/tsuku-dev/tsuku-registry/issues/4): chore: configure GitHub Pages for registry.tsuku.dev
+- [#5](https://github.com/tsuku-dev/tsuku-registry/issues/5): ci: add PR validation workflow for recipes
+- [#6](https://github.com/tsuku-dev/tsuku-registry/issues/6): ci: add workflow to generate and deploy recipe JSON
+- [#7](https://github.com/tsuku-dev/tsuku-registry/issues/7): chore: configure repository security settings
