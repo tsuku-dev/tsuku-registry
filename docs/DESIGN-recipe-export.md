@@ -68,6 +68,7 @@ Without an automated export mechanism:
    }
    ```
 5. **GitHub Actions limits**: Workflow must complete within GitHub's 10-minute timeout
+6. **CORS**: GitHub Pages serves public sites with `Access-Control-Allow-Origin: *` by default, enabling tsuku.dev to fetch `recipes.json` via JavaScript
 
 ## Decision Drivers
 
