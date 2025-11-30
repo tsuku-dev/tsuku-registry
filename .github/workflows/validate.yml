@@ -12,36 +12,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate TOML syntax
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run tests
+        run: python3 scripts/test_generate.py -v
+
+      - name: Validate recipes and generate JSON
+        run: python3 scripts/generate.py
+
+      - name: Verify output
         run: |
-          pip install toml
-          python3 << 'EOF'
-          import os
-          import sys
-          import toml
-
-          errors = []
-          for root, dirs, files in os.walk('recipes'):
-              for f in files:
-                  if f.endswith('.toml'):
-                      path = os.path.join(root, f)
-                      try:
-                          with open(path) as fp:
-                              data = toml.load(fp)
-                          # Check required fields
-                          if 'metadata' not in data:
-                              errors.append(f"{path}: missing [metadata] section")
-                          elif 'name' not in data['metadata']:
-                              errors.append(f"{path}: missing metadata.name")
-                          if 'steps' not in data:
-                              errors.append(f"{path}: missing [[steps]] section")
-                      except toml.TomlDecodeError as e:
-                          errors.append(f"{path}: {e}")
-
-          if errors:
-              for e in errors:
-                  print(f"ERROR: {e}", file=sys.stderr)
-              sys.exit(1)
-          else:
-              print(f"Validated {sum(1 for _ in os.walk('recipes') for f in _[2] if f.endswith('.toml'))} recipes")
-          EOF
+          test -f _site/recipes.json
+          python3 -c "import json; d = json.load(open('_site/recipes.json')); print(f'Generated {len(d[\"recipes\"])} recipes')"
