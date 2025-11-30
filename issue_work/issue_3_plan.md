@@ -24,13 +24,13 @@ The script is intentionally simple (~100 lines) with no external dependencies, m
 - None (new feature)
 
 ## Implementation Steps
-- [ ] Create scripts directory and generate.py skeleton
-- [ ] Implement file discovery (glob recipes/*/*.toml)
-- [ ] Implement TOML parsing with tomllib
-- [ ] Implement validation rules (name, description, homepage, path, size)
-- [ ] Implement JSON output generation
-- [ ] Implement error aggregation and exit codes
-- [ ] Test with existing 171 recipes
+- [x] Create scripts directory and generate.py skeleton
+- [x] Implement file discovery (glob recipes/*/*.toml)
+- [x] Implement TOML parsing with tomllib
+- [x] Implement validation rules (name, description, homepage, path, size)
+- [x] Implement JSON output generation
+- [x] Implement error aggregation and exit codes
+- [x] Test with existing 171 recipes
 
 ## Testing Strategy
 - **Manual verification**: Run against all 171 recipes, verify output format
