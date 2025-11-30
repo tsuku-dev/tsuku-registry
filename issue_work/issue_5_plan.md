@@ -23,9 +23,9 @@ The existing validate.yml already meets most requirements. Only changes needed:
 
 ## Implementation Steps
 
-- [ ] Rename validate.yml to validate-recipes.yml
-- [ ] Pin actions/checkout to SHA (v4 → 1af3b93b6815bc44a9784bd300feb67ff0d1eeb3)
-- [ ] Pin actions/setup-python to SHA (v5 → 83679a892e2d95755f2dac6acb0bfd1e9ac5d548)
+- [x] Rename validate.yml to validate-recipes.yml
+- [x] Pin actions/checkout to SHA (v4 → 1af3b93b6815bc44a9784bd300feb67ff0d1eeb3)
+- [x] Pin actions/setup-python to SHA (v5 → 83679a892e2d95755f2dac6acb0bfd1e9ac5d548)
 
 ## Action SHAs (from issue #6 research)
 
