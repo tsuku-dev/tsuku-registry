@@ -15,12 +15,12 @@ This issue involves mostly manual configuration (GitHub Settings, DNS) with one 
 
 ## Files to Create
 
-- `_site/CNAME` - Custom domain configuration file containing `registry.tsuku.dev`
+- `CNAME` - Custom domain configuration file at repo root containing `registry.tsuku.dev` (deploy workflow copies to _site/)
 
 ## Implementation Steps
 
-- [ ] Create `_site/CNAME` with domain `registry.tsuku.dev`
-- [ ] Verify CI still passes with CNAME file present
+- [x] Create `_site/CNAME` with domain `registry.tsuku.dev`
+- [x] Verify CI still passes with CNAME file present
 
 ## Manual Steps (for maintainer)
 
