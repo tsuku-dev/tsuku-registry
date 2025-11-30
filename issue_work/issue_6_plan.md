@@ -27,7 +27,7 @@ Use the standard GitHub Pages deployment pattern with actions pinned to commit S
 
 ## Implementation Steps
 
-- [ ] Create `.github/workflows/deploy.yml` with build and deploy jobs
+- [x] Create `.github/workflows/deploy.yml` with build and deploy jobs
 - [ ] Verify workflow syntax with `gh workflow view`
 
 ## Workflow Structure
