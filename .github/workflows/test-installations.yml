@@ -1,0 +1,75 @@
+name: Test Changed Recipes
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'recipes/**/*.toml'
+      - '.github/workflows/test-installations.yml'
+  workflow_dispatch:
+
+jobs:
+  test-changed-recipes:
+    name: "Test Changed Recipes"
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout registry
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+
+      - name: Get changed recipe files
+        id: changed-files
+        run: |
+          CHANGED=$(git diff --name-only origin/main...HEAD -- 'recipes/**/*.toml' | tr '\n' ' ')
+          echo "recipes=$CHANGED" >> $GITHUB_OUTPUT
+          if [ -z "$CHANGED" ]; then
+            echo "No recipe files changed"
+          else
+            echo "Changed recipes: $CHANGED"
+          fi
+
+      - name: Checkout tsuku
+        if: steps.changed-files.outputs.recipes != ''
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: tsuku-dev/tsuku
+          path: tsuku-cli
+
+      - name: Set up Go
+        if: steps.changed-files.outputs.recipes != ''
+        uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a
+        with:
+          go-version-file: 'tsuku-cli/go.mod'
+          cache-dependency-path: tsuku-cli/go.sum
+
+      - name: Build tsuku from source
+        if: steps.changed-files.outputs.recipes != ''
+        run: |
+          cd tsuku-cli
+          go build -o ../tsuku ./cmd/tsuku
+
+      - name: Verify tsuku build
+        if: steps.changed-files.outputs.recipes != ''
+        run: ./tsuku --version
+
+      - name: Setup PATH
+        if: steps.changed-files.outputs.recipes != ''
+        run: echo "$HOME/.tsuku/bin" >> $GITHUB_PATH
+
+      - name: Test changed recipes
+        if: steps.changed-files.outputs.recipes != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for recipe in ${{ steps.changed-files.outputs.recipes }}; do
+            echo "Testing: $recipe"
+            ./tsuku install --recipe-file "$recipe" --force
+            echo "---"
+          done
