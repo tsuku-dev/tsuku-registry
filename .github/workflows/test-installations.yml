@@ -68,8 +68,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          mkdir -p ~/.tsuku/recipes
           for recipe in ${{ steps.changed-files.outputs.recipes }}; do
-            echo "Testing: $recipe"
-            ./tsuku install --recipe-file "$recipe" --force
+            # Extract tool name from path (e.g., recipes/a/ack.toml -> ack)
+            tool=$(basename "$recipe" .toml)
+            echo "Testing: $tool (from $recipe)"
+            # Copy recipe to local recipes directory
+            cp "$recipe" ~/.tsuku/recipes/
+            # Install the tool
+            ./tsuku install "$tool" --force
             echo "---"
           done
