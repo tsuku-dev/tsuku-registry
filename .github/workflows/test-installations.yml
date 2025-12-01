@@ -1,0 +1,65 @@
+name: Test Recipe Installations
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recipes/**/*.toml'
+      - '.github/workflows/test-installations.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'recipes/**/*.toml'
+      - '.github/workflows/test-installations.yml'
+  workflow_dispatch:
+
+jobs:
+  test-toolchains:
+    name: "Test Toolchain Recipes"
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout registry
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Checkout tsuku
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: tsuku-dev/tsuku
+          path: tsuku-cli
+
+      - name: Set up Go
+        uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a
+        with:
+          go-version-file: 'tsuku-cli/go.mod'
+          cache-dependency-path: tsuku-cli/go.sum
+
+      - name: Build tsuku from source
+        run: |
+          cd tsuku-cli
+          go build -o ../tsuku ./cmd/tsuku
+
+      - name: Verify tsuku build
+        run: ./tsuku --version
+
+      - name: Setup PATH
+        run: echo "$HOME/.tsuku/bin" >> $GITHUB_PATH
+
+      - name: Test Go toolchain installation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./tsuku install --recipe-file recipes/g/go.toml --force
+          go version
+
+      - name: Test Perl runtime installation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./tsuku install --recipe-file recipes/p/perl.toml --force
+          perl -v | head -3
