@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "k3d-io/k3d"
-asset = "k3d-{os}-{arch}"
+asset_pattern = "k3d-{os}-{arch}"
 binary = "k3d"
 
 [verify]

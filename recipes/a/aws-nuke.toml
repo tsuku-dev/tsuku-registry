@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "rebuy-de/aws-nuke"
-asset = "aws-nuke-v{version}-{os}-{arch}.tar.gz"
+asset_pattern = "aws-nuke-v{version}-{os}-{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = [{src = "aws-nuke-v{version}-{os}-{arch}", dest = "bin/aws-nuke"}]

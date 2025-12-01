@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "kubernetes-sigs/aws-iam-authenticator"
-asset = "aws-iam-authenticator_{version}_{os}_{arch}"
+asset_pattern = "aws-iam-authenticator_{version}_{os}_{arch}"
 binary = "aws-iam-authenticator"
 
 [verify]

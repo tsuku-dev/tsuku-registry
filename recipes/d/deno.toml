@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "denoland/deno"
-asset = "deno-{arch}-unknown-{os}-gnu.zip"
+asset_pattern = "deno-{arch}-unknown-{os}-gnu.zip"
 archive_format = "zip"
 strip_dirs = 0
 binaries = ["deno"]

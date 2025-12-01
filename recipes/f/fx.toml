@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "antonmedv/fx"
-asset = "fx_{os}_{arch}"
+asset_pattern = "fx_{os}_{arch}"
 binary = "fx"
 
 [verify]

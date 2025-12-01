@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "mamba-org/micromamba-releases"
-asset = "micromamba-{os}-{arch}"
+asset_pattern = "micromamba-{os}-{arch}"
 binary = "micromamba"
 arch_mapping = { amd64 = "64" }
 

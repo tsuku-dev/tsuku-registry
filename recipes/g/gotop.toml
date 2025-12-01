@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "xxxserxxx/gotop"
-asset = "gotop_v{version}_{os}_{arch}.tgz"
+asset_pattern = "gotop_v{version}_{os}_{arch}.tgz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["gotop"]

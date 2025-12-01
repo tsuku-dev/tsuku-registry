@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "k3s-io/k3s"
-asset = "k3s"
+asset_pattern = "k3s"
 binary = "k3s"
 
 [verify]

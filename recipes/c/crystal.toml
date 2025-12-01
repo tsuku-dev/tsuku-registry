@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "crystal-lang/crystal"
-asset = "crystal-{version}-1-{os}-{arch}.tar.gz"
+asset_pattern = "crystal-{version}-1-{os}-{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 1
 binaries = ["bin/crystal"]

@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "argoproj/argo-cd"
-asset = "argocd-{os}-{arch}"
+asset_pattern = "argocd-{os}-{arch}"
 binary = "argocd"
 
 [verify]
