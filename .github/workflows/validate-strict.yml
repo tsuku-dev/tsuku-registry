@@ -41,4 +41,12 @@ jobs:
         run: ./tsuku --version
 
       - name: Validate all recipes
-        run: ./tsuku validate --strict recipes/**/*.toml
+        run: |
+          failed=0
+          for recipe in recipes/**/*.toml; do
+            echo "Validating: $recipe"
+            if ! ./tsuku validate --strict "$recipe"; then
+              failed=1
+            fi
+          done
+          exit $failed
