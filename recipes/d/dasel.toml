@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "TomWright/dasel"
-asset = "dasel_{os}_{arch}"
+asset_pattern = "dasel_{os}_{arch}"
 binary = "dasel"
 
 [verify]

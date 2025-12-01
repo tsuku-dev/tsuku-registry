@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "pressly/goose"
-asset = "goose_{os}_{arch}"
+asset_pattern = "goose_{os}_{arch}"
 binary = "goose"
 arch_mapping = { amd64 = "x86_64" }
 

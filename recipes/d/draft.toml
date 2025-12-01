@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "Azure/draft"
-asset = "draft-{os}-{arch}"
+asset_pattern = "draft-{os}-{arch}"
 binary = "draft"
 
 [verify]

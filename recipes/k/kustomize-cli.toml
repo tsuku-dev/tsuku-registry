@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "kubernetes-sigs/kustomize"
-asset = "kustomize_v{version}_{os}_{arch}.tar.gz"
+asset_pattern = "kustomize_v{version}_{os}_{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["kustomize"]

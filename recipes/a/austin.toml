@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "P403n1x87/austin"
-asset = "austin-{version}-gnu-{os}-{arch}.tar.xz"
+asset_pattern = "austin-{version}-gnu-{os}-{arch}.tar.xz"
 archive_format = "tar.xz"
 strip_dirs = 0
 binaries = ["austin"]

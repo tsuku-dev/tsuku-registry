@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "kubernetes/minikube"
-asset = "minikube-{os}-{arch}"
+asset_pattern = "minikube-{os}-{arch}"
 binary = "minikube"
 
 [verify]

@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "jj-vcs/jj"
-asset = "jj-v{version}-{arch}-{os}.tar.gz"
+asset_pattern = "jj-v{version}-{arch}-{os}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["jj"]

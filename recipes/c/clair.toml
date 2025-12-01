@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "quay/clair"
-asset = "clairctl-{os}-{arch}"
+asset_pattern = "clairctl-{os}-{arch}"
 binaries = [{src = "clairctl-{os}-{arch}", dest = "bin/clairctl"}]
 
 [verify]

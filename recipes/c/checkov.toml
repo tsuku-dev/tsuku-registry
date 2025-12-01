@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "bridgecrewio/checkov"
-asset = "checkov_{os}_{arch}.zip"
+asset_pattern = "checkov_{os}_{arch}.zip"
 archive_format = "zip"
 strip_dirs = 1
 binaries = ["checkov"]

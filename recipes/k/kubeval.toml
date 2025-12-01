@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "instrumenta/kubeval"
-asset = "kubeval-{os}-{arch}.tar.gz"
+asset_pattern = "kubeval-{os}-{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["kubeval"]

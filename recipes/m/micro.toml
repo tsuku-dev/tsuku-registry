@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "zyedidia/micro"
-asset = "micro-{version}-linux{arch}.tar.gz"
+asset_pattern = "micro-{version}-linux{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 1
 binaries = ["micro"]

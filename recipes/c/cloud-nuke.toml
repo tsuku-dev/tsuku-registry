@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "gruntwork-io/cloud-nuke"
-asset = "cloud-nuke_{os}_{arch}"
+asset_pattern = "cloud-nuke_{os}_{arch}"
 binary = "cloud-nuke"
 
 [verify]

@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "dgraph-io/dgraph"
-asset = "dgraph-{os}-{arch}.tar.gz"
+asset_pattern = "dgraph-{os}-{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["dgraph"]

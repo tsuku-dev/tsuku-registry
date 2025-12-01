@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "shyiko/jabba"
-asset = "jabba-{version}-{os}-{arch}"
+asset_pattern = "jabba-{version}-{os}-{arch}"
 binary = "jabba"
 
 [verify]

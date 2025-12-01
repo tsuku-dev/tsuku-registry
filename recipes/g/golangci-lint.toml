@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "golangci/golangci-lint"
-asset = "golangci-lint-{version}-{os}-{arch}.tar.gz"
+asset_pattern = "golangci-lint-{version}-{os}-{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 1
 binaries = ["golangci-lint"]

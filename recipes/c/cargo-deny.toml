@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "EmbarkStudios/cargo-deny"
-asset = "cargo-deny-{version}-{arch}-{os}.tar.gz"
+asset_pattern = "cargo-deny-{version}-{arch}-{os}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 1
 binaries = ["cargo-deny"]

@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "infracost/infracost"
-asset = "infracost-{os}-{arch}.tar.gz"
+asset_pattern = "infracost-{os}-{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["infracost-linux-amd64"]

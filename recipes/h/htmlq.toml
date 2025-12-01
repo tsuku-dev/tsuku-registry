@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "mgdm/htmlq"
-asset = "htmlq-{arch}-{os}.tar.gz"
+asset_pattern = "htmlq-{arch}-{os}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["htmlq"]

@@ -7,7 +7,7 @@ version_format = "custom"
 [[steps]]
 action = "github_archive"
 repo = "indygreg/python-build-standalone"
-asset = "cpython-*+{version}-{arch}-{os}-install_only.tar.gz"
+asset_pattern = "cpython-*+{version}-{arch}-{os}-install_only.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 1
 install_mode = "directory"
