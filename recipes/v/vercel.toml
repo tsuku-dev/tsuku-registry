@@ -4,6 +4,9 @@ description = "Vercel CLI - develop, deploy, and manage your Vercel projects"
 homepage = "https://vercel.com/cli"
 version_format = "semver"
 
+[version]
+github_repo = "vercel/vercel"
+
 [[steps]]
 action = "npm_install"
 package = "vercel"

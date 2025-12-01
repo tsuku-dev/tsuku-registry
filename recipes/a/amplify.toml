@@ -4,6 +4,9 @@ description = "AWS Amplify CLI - Build full-stack web and mobile apps"
 homepage = "https://aws.amazon.com/amplify/"
 version_format = "semver"
 
+[version]
+github_repo = "aws-amplify/amplify-cli"
+
 [[steps]]
 action = "npm_install"
 package = "@aws-amplify/cli"

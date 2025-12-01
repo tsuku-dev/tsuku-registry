@@ -4,6 +4,9 @@ description = "Serverless Framework - Build applications on AWS Lambda, Azure, G
 homepage = "https://www.serverless.com/"
 version_format = "semver"
 
+[version]
+github_repo = "serverless/serverless"
+
 [[steps]]
 action = "npm_install"
 package = "serverless"

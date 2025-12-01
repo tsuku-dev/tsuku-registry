@@ -11,7 +11,6 @@ distribution = "Perl-Tidy"
 
 [[steps]]
 action = "cpan_install"
-module = "Perl::Tidy"
 distribution = "Perl-Tidy"
 executables = ["perltidy"]
 
