@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "runatlantis/atlantis"
-asset_pattern = "atlantis_{os}_{arch}.zip"
+asset = "atlantis_{os}_{arch}.zip"
 archive_format = "zip"
 strip_dirs = 0
 binaries = ["atlantis"]

@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "oven-sh/bun"
-asset_pattern = "bun-{os}-{arch}.zip"
+asset = "bun-{os}-{arch}.zip"
 archive_format = "zip"
 strip_dirs = 1
 binaries = ["bun"]

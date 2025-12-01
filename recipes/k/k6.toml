@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "grafana/k6"
-asset_pattern = "k6-v{version}-{os}-{arch}.tar.gz"
+asset = "k6-v{version}-{os}-{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 1
 binaries = ["k6"]

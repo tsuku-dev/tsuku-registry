@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "git-lfs/git-lfs"
-asset_pattern = "git-lfs-{os}-{arch}-v{version}.tar.gz"
+asset = "git-lfs-{os}-{arch}-v{version}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 1
 binaries = ["git-lfs"]

@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "stern/stern"
-asset_pattern = "stern_{version}_{os}_{arch}.tar.gz"
+asset = "stern_{version}_{os}_{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["stern"]

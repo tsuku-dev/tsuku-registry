@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "99designs/aws-vault"
-asset_pattern = "aws-vault-{os}-{arch}"
+asset = "aws-vault-{os}-{arch}"
 binary = "aws-vault"
 
 [verify]

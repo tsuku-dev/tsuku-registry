@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "abiosoft/colima"
-asset_pattern = "colima-{os}-{arch}"
+asset = "colima-{os}-{arch}"
 binary = "colima"
 os_mapping = { linux = "Linux" }
 arch_mapping = { amd64 = "x86_64" }

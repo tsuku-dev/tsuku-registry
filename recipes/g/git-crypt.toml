@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "AGWA/git-crypt"
-asset_pattern = "git-crypt-{version}-{os}-{arch}"
+asset = "git-crypt-{version}-{os}-{arch}"
 binary = "git-crypt"
 arch_mapping = { amd64 = "x86_64" }
 

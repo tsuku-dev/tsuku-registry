@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "codesenberg/bombardier"
-asset_pattern = "bombardier-{os}-{arch}"
+asset = "bombardier-{os}-{arch}"
 binary = "bombardier"
 
 [verify]
