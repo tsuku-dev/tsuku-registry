@@ -5,7 +5,7 @@ homepage = "https://go.dev/"
 version_format = "semver"
 
 [version]
-github_repo = "golang/go"
+source = "go_toolchain"
 
 [[steps]]
 action = "download_archive"
