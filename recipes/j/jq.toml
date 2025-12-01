@@ -12,4 +12,4 @@ binary = "jq"
 
 [verify]
 command = "jq --version"
-pattern = "jq"
+pattern = "jq-{version}"

@@ -12,4 +12,4 @@ binaries = [{src = "borg-linux-glibc235-x86_64-gh", dest = "bin/borg"}]
 
 [verify]
 command = "borg --version"
-pattern = "borg"
+pattern = "borg {version}"

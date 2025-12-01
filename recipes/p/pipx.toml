@@ -21,4 +21,4 @@ command = "mkdir -p {install_dir}/bin && cp $HOME/.local/bin/pipx {install_dir}/
 
 [verify]
 command = "pipx --version"
-pattern = ""
+pattern = "{version}"

@@ -13,4 +13,4 @@ arch_mapping = { amd64 = "x86_64" }
 
 [verify]
 command = "hadolint --version"
-pattern = "Haskell Dockerfile Linter"
+pattern = "Haskell Dockerfile Linter {version}"

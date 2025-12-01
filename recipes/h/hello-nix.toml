@@ -17,9 +17,6 @@ description = "GNU Hello (installed via nix) - test recipe for nix_install"
 homepage = "https://www.gnu.org/software/hello/"
 tier = 3
 
-[version]
-source = "nixpkgs"
-
 [[steps]]
 action = "nix_install"
 package = "hello"
@@ -27,4 +24,4 @@ executables = ["hello"]
 
 [verify]
 command = "{install_dir}/bin/hello --version"
-pattern = "hello"
+pattern = "hello (GNU Hello) {version}"

@@ -16,4 +16,4 @@ arch_mapping = { amd64 = "amd64", arm64 = "arm64" }
 
 [verify]
 command = "etcd --version"
-pattern = "etcd"
+pattern = "etcd Version: {version}"
