@@ -6,8 +6,7 @@ version_format = "semver"
 dependencies = ["go"]
 
 [version]
-source = "goproxy"
-module = "honnef.co/go/tools"
+github_repo = "dominikh/go-tools"
 
 [[steps]]
 action = "go_install"

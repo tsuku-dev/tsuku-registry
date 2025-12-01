@@ -6,8 +6,7 @@ version_format = "semver"
 dependencies = ["go"]
 
 [version]
-source = "goproxy"
-module = "go.uber.org/mock"
+github_repo = "uber-go/mock"
 
 [[steps]]
 action = "go_install"

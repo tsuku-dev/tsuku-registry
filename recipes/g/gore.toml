@@ -6,8 +6,7 @@ version_format = "semver"
 dependencies = ["go"]
 
 [version]
-source = "goproxy"
-module = "github.com/x-motemen/gore"
+github_repo = "x-motemen/gore"
 
 [[steps]]
 action = "go_install"
