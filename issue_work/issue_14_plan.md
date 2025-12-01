@@ -26,11 +26,11 @@ Following the pattern established by gem_install (bundler.toml) and pipx_install
 
 ## Implementation Steps
 
-- [ ] Create ack.toml recipe (App-ack distribution)
-- [ ] Create perltidy.toml recipe (Perl-Tidy distribution)
-- [ ] Create perlcritic.toml recipe (Perl-Critic distribution)
-- [ ] Create carton.toml recipe (Carton distribution)
-- [ ] Test all recipes locally with `tsuku install --recipe-file`
+- [x] Create ack.toml recipe (ack distribution)
+- [x] Create perltidy.toml recipe (Perl-Tidy distribution)
+- [x] Create perlcritic.toml recipe (Perl-Critic distribution)
+- [x] Create carton.toml recipe (Carton distribution)
+- [ ] Test all recipes locally (blocked by tsuku-dev/tsuku#161)
 
 ## Testing Strategy
 
@@ -54,3 +54,7 @@ Following the pattern established by gem_install (bundler.toml) and pipx_install
 ## Open Questions
 
 None - all tools are well-known pure Perl distributions.
+
+## Blockers
+
+- **tsuku-dev/tsuku#161**: cpan_install action doesn't convert distribution names to module names before calling cpanm. Recipes use correct distribution names per documented interface, but installation fails until CLI is fixed.
