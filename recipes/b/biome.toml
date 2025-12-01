@@ -4,6 +4,9 @@ description = "Fast formatter and linter for JavaScript, TypeScript, JSX, JSON"
 homepage = "https://biomejs.dev/"
 version_format = "semver"
 
+[version]
+github_repo = "biomejs/biome"
+
 [[steps]]
 action = "github_file"
 repo = "biomejs/biome"
@@ -12,5 +15,7 @@ binary = "biome"
 arch_mapping = { amd64 = "x64" }
 
 [verify]
+# Version from GitHub is "biome@X.Y.Z", but binary outputs plain "X.Y.Z"
+# Use pattern without {version} since the version formats don't match
 command = "biome --version"
-pattern = "Version: {version}"
+pattern = "Version:"
