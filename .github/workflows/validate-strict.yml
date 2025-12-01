@@ -1,0 +1,44 @@
+name: Validate Recipes (Strict)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'recipes/**/*.toml'
+      - '.github/workflows/validate-strict.yml'
+  schedule:
+    - cron: '0 0 * * *'  # Nightly at 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: "Validate All Recipes"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout registry
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Checkout tsuku
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: tsuku-dev/tsuku
+          path: tsuku-cli
+
+      - name: Set up Go
+        uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a
+        with:
+          go-version-file: 'tsuku-cli/go.mod'
+          cache-dependency-path: tsuku-cli/go.sum
+
+      - name: Build tsuku from source
+        run: |
+          cd tsuku-cli
+          go build -o ../tsuku ./cmd/tsuku
+
+      - name: Verify tsuku build
+        run: ./tsuku --version
+
+      - name: Validate all recipes
+        run: ./tsuku validate --strict recipes/**/*.toml

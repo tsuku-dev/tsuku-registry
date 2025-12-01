@@ -23,10 +23,10 @@ Create a new workflow file that:
 
 ## Implementation Steps
 
-- [ ] Create validate-strict.yml workflow
-- [ ] Configure PR trigger
-- [ ] Configure nightly schedule trigger
-- [ ] Pin actions to commit SHAs (matching existing patterns)
+- [x] Create validate-strict.yml workflow
+- [x] Configure PR trigger
+- [x] Configure nightly schedule trigger
+- [x] Pin actions to commit SHAs (matching existing patterns)
 - [ ] Test workflow runs successfully
 
 ## Testing Strategy
