@@ -1,0 +1,19 @@
+[metadata]
+name = "cobra-cli"
+description = "CLI scaffolding generator for Go"
+homepage = "https://cobra.dev/"
+version_format = "semver"
+dependencies = ["go"]
+
+[version]
+source = "goproxy"
+module = "github.com/spf13/cobra-cli"
+
+[[steps]]
+action = "go_install"
+module = "github.com/spf13/cobra-cli"
+executables = ["cobra-cli"]
+
+[verify]
+command = "cobra-cli help"
+pattern = "Cobra"

@@ -31,12 +31,12 @@ Based on the recipe format from the design doc:
 
 ## Implementation Steps
 
-- [ ] Create recipe for gofumpt
-- [ ] Create recipe for staticcheck
-- [ ] Create recipe for gore
-- [ ] Create recipe for cobra-cli
-- [ ] Create recipe for mockgen
-- [ ] Create recipe for goimports
+- [x] Create recipe for gofumpt
+- [x] Create recipe for staticcheck
+- [x] Create recipe for gore
+- [x] Create recipe for cobra-cli
+- [x] Create recipe for mockgen
+- [x] Create recipe for goimports
 
 ## Recipe Format
 
@@ -79,9 +79,9 @@ pattern = "<pattern>"
 
 ## Success Criteria
 
-- [ ] 6 new recipes created (gofumpt, staticcheck, gore, cobra-cli, mockgen, goimports)
-- [ ] All recipes pass `python3 scripts/generate.py` validation
-- [ ] All recipes follow the go_install pattern with dependencies = ["go"]
+- [x] 6 new recipes created (gofumpt, staticcheck, gore, cobra-cli, mockgen, goimports)
+- [x] All recipes pass `python3 scripts/generate.py` validation
+- [x] All recipes follow the go_install pattern with dependencies = ["go"]
 - [ ] CI passes (both validate-recipes and test-installations workflows)
 
 ## Open Questions

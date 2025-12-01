@@ -1,0 +1,19 @@
+[metadata]
+name = "gofumpt"
+description = "Stricter gofmt"
+homepage = "https://github.com/mvdan/gofumpt"
+version_format = "semver"
+dependencies = ["go"]
+
+[version]
+source = "goproxy"
+module = "mvdan.cc/gofumpt"
+
+[[steps]]
+action = "go_install"
+module = "mvdan.cc/gofumpt"
+executables = ["gofumpt"]
+
+[verify]
+command = "gofumpt --version"
+pattern = "{version}"
