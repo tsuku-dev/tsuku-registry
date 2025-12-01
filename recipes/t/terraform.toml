@@ -14,5 +14,6 @@ binary = "terraform"
 verify_signature = false
 
 [verify]
-command = "terraform version"
+# Use full path to avoid false positive on 'rm' pattern detection (terraform contains 'rm')
+command = "{install_dir}/bin/terraform version"
 pattern = "{version}"
