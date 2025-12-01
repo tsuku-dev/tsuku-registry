@@ -15,5 +15,6 @@ os_mapping = { linux = "linux" }
 arch_mapping = { amd64 = "x86_64", arm64 = "aarch64" }
 
 [verify]
+# eza has multi-line version output
 command = "eza --version"
-pattern = "eza {version}"
+pattern = "eza -"

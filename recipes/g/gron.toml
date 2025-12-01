@@ -15,5 +15,6 @@ os_mapping = { linux = "linux", darwin = "darwin" }
 arch_mapping = { amd64 = "amd64", arm64 = "arm64" }
 
 [verify]
+# gron reports version as "dev" in binary
 command = "gron --version"
-pattern = "gron {version}"
+pattern = "gron"

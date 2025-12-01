@@ -11,5 +11,6 @@ asset_pattern = "bombardier-{os}-{arch}"
 binary = "bombardier"
 
 [verify]
+# Binary reports version as "unspecified" - just verify it runs
 command = "bombardier --version"
-pattern = "bombardier version {version}"
+pattern = "bombardier version"

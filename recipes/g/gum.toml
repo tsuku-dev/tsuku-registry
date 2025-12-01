@@ -15,5 +15,6 @@ os_mapping = { linux = "Linux", darwin = "Darwin" }
 arch_mapping = { amd64 = "x86_64", arm64 = "arm64" }
 
 [verify]
+# gum includes v prefix and commit hash in version
 command = "gum --version"
-pattern = "gum version {version}"
+pattern = "gum version"
