@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "bootandy/dust"
-asset_pattern = "dust-v{version}-{arch}-unknown-{os}-gnu.tar.gz"
+asset = "dust-v{version}-{arch}-unknown-{os}-gnu.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 1
 binaries = ["dust"]

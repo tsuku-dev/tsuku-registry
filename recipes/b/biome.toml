@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "biomejs/biome"
-asset_pattern = "biome-{os}-{arch}"
+asset = "biome-{os}-{arch}"
 binary = "biome"
 arch_mapping = { amd64 = "x64" }
 

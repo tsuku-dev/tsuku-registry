@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "jqlang/jq"
-asset_pattern = "jq-{os}-{arch}"
+asset = "jq-{os}-{arch}"
 binary = "jq"
 
 [verify]

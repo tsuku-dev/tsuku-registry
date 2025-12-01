@@ -11,6 +11,7 @@ distribution = "Perl-Critic"
 
 [[steps]]
 action = "cpan_install"
+module = "Perl::Critic"
 distribution = "Perl-Critic"
 executables = ["perlcritic"]
 

@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "appwrite/sdk-for-cli"
-asset_pattern = "appwrite-cli-{os}-{arch}"
+asset = "appwrite-cli-{os}-{arch}"
 binary = "appwrite"
 arch_mapping = { amd64 = "x64" }
 

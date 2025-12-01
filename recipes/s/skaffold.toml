@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "GoogleContainerTools/skaffold"
-asset_pattern = "skaffold-{os}-{arch}"
+asset = "skaffold-{os}-{arch}"
 binary = "skaffold"
 
 [verify]

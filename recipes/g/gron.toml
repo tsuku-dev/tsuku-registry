@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "tomnomnom/gron"
-asset_pattern = "gron-{os}-{arch}-{version}.tgz"
+asset = "gron-{os}-{arch}-{version}.tgz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["gron"]

@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "securego/gosec"
-asset_pattern = "gosec_{version}_{os}_{arch}.tar.gz"
+asset = "gosec_{version}_{os}_{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["gosec"]

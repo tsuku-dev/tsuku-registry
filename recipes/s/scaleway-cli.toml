@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "scaleway/scaleway-cli"
-asset_pattern = "scaleway-cli_{version}_{os}_{arch}"
+asset = "scaleway-cli_{version}_{os}_{arch}"
 binaries = [{src = "scaleway-cli_{version}_{os}_{arch}", dest = "bin/scw"}]
 
 [verify]

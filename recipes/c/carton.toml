@@ -11,6 +11,7 @@ distribution = "Carton"
 
 [[steps]]
 action = "cpan_install"
+module = "Carton"
 distribution = "Carton"
 executables = ["carton"]
 

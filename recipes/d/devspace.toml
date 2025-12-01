@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "loft-sh/devspace"
-asset_pattern = "devspace-{os}-{arch}"
+asset = "devspace-{os}-{arch}"
 binary = "devspace"
 
 [verify]

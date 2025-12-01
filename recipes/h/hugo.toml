@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "gohugoio/hugo"
-asset_pattern = "hugo_{version}_{os}-{arch}.tar.gz"
+asset = "hugo_{version}_{os}-{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["hugo"]

@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "gitui-org/gitui"
-asset_pattern = "gitui-{os}-{arch}.tar.gz"
+asset = "gitui-{os}-{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["gitui"]

@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "pulumi/pulumi"
-asset_pattern = "pulumi-v{version}-{os}-{arch}.tar.gz"
+asset = "pulumi-v{version}-{os}-{arch}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 1
 binaries = ["pulumi"]

@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_archive"
 repo = "ClementTsang/bottom"
-asset_pattern = "bottom_{arch}-{os}.tar.gz"
+asset = "bottom_{arch}-{os}.tar.gz"
 archive_format = "tar.gz"
 strip_dirs = 0
 binaries = ["btm"]

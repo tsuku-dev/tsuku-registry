@@ -7,7 +7,7 @@ version_format = "semver"
 [[steps]]
 action = "github_file"
 repo = "hadolint/hadolint"
-asset_pattern = "hadolint-{os}-{arch}"
+asset = "hadolint-{os}-{arch}"
 binary = "hadolint"
 arch_mapping = { amd64 = "x86_64" }
 
