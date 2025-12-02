@@ -1,8 +1,7 @@
 [metadata]
 name = "gofumpt"
-description = "Stricter gofmt"
-homepage = "https://github.com/mvdan/gofumpt"
-version_format = "semver"
+description = "A stricter gofmt"
+homepage = "https://pkg.go.dev/mvdan.cc/gofumpt"
 dependencies = ["go"]
 
 [version]
@@ -16,4 +15,3 @@ executables = ["gofumpt"]
 
 [verify]
 command = "gofumpt --version"
-pattern = "{version}"

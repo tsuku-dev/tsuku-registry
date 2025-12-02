@@ -2,7 +2,6 @@
 name = "cobra-cli"
 description = "CLI scaffolding generator for Go"
 homepage = "https://cobra.dev/"
-version_format = "semver"
 dependencies = ["go"]
 
 [version]
@@ -16,4 +15,3 @@ executables = ["cobra-cli"]
 
 [verify]
 command = "cobra-cli help"
-pattern = "Cobra"

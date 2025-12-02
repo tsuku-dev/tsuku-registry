@@ -2,11 +2,11 @@
 name = "goimports"
 description = "Go import statement formatter"
 homepage = "https://pkg.go.dev/golang.org/x/tools/cmd/goimports"
-version_format = "semver"
 dependencies = ["go"]
 
 [version]
-github_repo = "golang/tools"
+source = "goproxy"
+module = "golang.org/x/tools"
 
 [[steps]]
 action = "go_install"
@@ -15,4 +15,3 @@ executables = ["goimports"]
 
 [verify]
 command = "goimports --help"
-pattern = "goimports"

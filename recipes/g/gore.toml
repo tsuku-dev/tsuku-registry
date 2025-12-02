@@ -2,11 +2,11 @@
 name = "gore"
 description = "Go REPL with line editing and completion"
 homepage = "https://github.com/x-motemen/gore"
-version_format = "semver"
 dependencies = ["go"]
 
 [version]
-github_repo = "x-motemen/gore"
+source = "goproxy"
+module = "github.com/x-motemen/gore"
 
 [[steps]]
 action = "go_install"
@@ -15,4 +15,3 @@ executables = ["gore"]
 
 [verify]
 command = "gore --help"
-pattern = "gore"
