@@ -1,0 +1,68 @@
+name: Validate Changed Recipes (Strict)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'recipes/**/*.toml'
+      - '.github/workflows/validate-strict.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: "Validate Changed Recipes"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout registry
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+
+      - name: Get changed recipe files
+        id: changed-files
+        run: |
+          CHANGED=$(git diff --name-only origin/main...HEAD -- 'recipes/**/*.toml' | tr '\n' ' ')
+          echo "recipes=$CHANGED" >> $GITHUB_OUTPUT
+          if [ -z "$CHANGED" ]; then
+            echo "No recipe files changed"
+          else
+            echo "Changed recipes: $CHANGED"
+          fi
+
+      - name: Checkout tsuku
+        if: steps.changed-files.outputs.recipes != ''
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: tsuku-dev/tsuku
+          path: tsuku-cli
+
+      - name: Set up Go
+        if: steps.changed-files.outputs.recipes != ''
+        uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a
+        with:
+          go-version-file: 'tsuku-cli/go.mod'
+          cache-dependency-path: tsuku-cli/go.sum
+
+      - name: Build tsuku from source
+        if: steps.changed-files.outputs.recipes != ''
+        run: |
+          cd tsuku-cli
+          go build -o ../tsuku ./cmd/tsuku
+
+      - name: Verify tsuku build
+        if: steps.changed-files.outputs.recipes != ''
+        run: ./tsuku --version
+
+      - name: Validate changed recipes
+        if: steps.changed-files.outputs.recipes != ''
+        run: |
+          failed=0
+          for recipe in ${{ steps.changed-files.outputs.recipes }}; do
+            echo "Validating: $recipe"
+            if ! ./tsuku validate --strict "$recipe"; then
+              failed=1
+            fi
+          done
+          exit $failed

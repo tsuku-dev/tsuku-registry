@@ -18,7 +18,7 @@ homepage = "https://www.gnu.org/software/hello/"
 tier = 3
 
 [version]
-source = "nixpkgs"
+github_repo = "NixOS/nixpkgs"
 
 [[steps]]
 action = "nix_install"
@@ -27,4 +27,4 @@ executables = ["hello"]
 
 [verify]
 command = "{install_dir}/bin/hello --version"
-pattern = "hello"
+pattern = "hello (GNU Hello) {version}"

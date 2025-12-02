@@ -16,4 +16,4 @@ arch_mapping = { amd64 = "amd64" }
 
 [verify]
 command = "ks version"
-pattern = "ksonnet"
+pattern = "ksonnet version: {version}"

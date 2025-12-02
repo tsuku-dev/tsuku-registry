@@ -4,6 +4,10 @@ description = "JSON processor"
 homepage = "https://jqlang.github.io/jq/"
 version_format = "semver"
 
+[version]
+github_repo = "jqlang/jq"
+tag_prefix = "jq-"
+
 [[steps]]
 action = "github_file"
 repo = "jqlang/jq"
@@ -12,4 +16,4 @@ binary = "jq"
 
 [verify]
 command = "jq --version"
-pattern = "jq"
+pattern = "jq-{version}"
