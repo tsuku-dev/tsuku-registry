@@ -13,5 +13,7 @@ crate = "cargo-edit"
 executables = ["cargo-add", "cargo-rm", "cargo-upgrade"]
 
 [verify]
-command = "cargo-add --version"
-pattern = "cargo-add {version}"
+# cargo-add is a cargo subcommand, doesn't support --version directly
+# verify by checking the help output
+command = "cargo-add --help"
+pattern = "Add dependencies to a Cargo.toml"
