@@ -1,0 +1,17 @@
+[metadata]
+name = "gofumpt"
+description = "A stricter gofmt"
+homepage = "https://pkg.go.dev/mvdan.cc/gofumpt"
+dependencies = ["go"]
+
+[version]
+source = "goproxy"
+module = "mvdan.cc/gofumpt"
+
+[[steps]]
+action = "go_install"
+module = "mvdan.cc/gofumpt"
+executables = ["gofumpt"]
+
+[verify]
+command = "gofumpt --version"
