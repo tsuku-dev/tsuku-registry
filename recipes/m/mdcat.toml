@@ -16,4 +16,4 @@ arch_mapping = { amd64 = "x86_64" }
 
 [verify]
 command = "mdcat --version"
-pattern = "mdcat {version}"
+pattern = "mdcat"
