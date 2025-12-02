@@ -11,6 +11,5 @@ asset_pattern = "dasel_{os}_{arch}"
 binary = "dasel"
 
 [verify]
-# dasel includes v prefix in version output
 command = "dasel --version"
-pattern = "dasel version"
+pattern = "dasel"

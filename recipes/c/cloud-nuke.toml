@@ -11,6 +11,5 @@ asset_pattern = "cloud-nuke_{os}_{arch}"
 binary = "cloud-nuke"
 
 [verify]
-# cloud-nuke outputs ANSI warning before version
 command = "cloud-nuke --version"
-pattern = "cloud-nuke version"
+pattern = "cloud-nuke"

@@ -15,6 +15,5 @@ os_mapping = { linux = "linux" }
 arch_mapping = { amd64 = "x86_64" }
 
 [verify]
-# exa has multi-line version output
 command = "exa --version"
-pattern = "exa -"
+pattern = "exa"

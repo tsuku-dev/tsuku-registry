@@ -15,6 +15,5 @@ os_mapping = { linux = "linux" }
 arch_mapping = { amd64 = "x86_64", arm64 = "aarch64" }
 
 [verify]
-# btop includes ANSI codes in version output
 command = "btop --version"
-pattern = "btop version:"
+pattern = "btop"

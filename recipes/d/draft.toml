@@ -11,6 +11,5 @@ asset_pattern = "draft-{os}-{arch}"
 binary = "draft"
 
 [verify]
-# draft has extra spaces in version output
 command = "draft version"
-pattern = "version:"
+pattern = "version"

@@ -15,6 +15,5 @@ os_mapping = { linux = "linux" }
 arch_mapping = { amd64 = "x86_64", arm64 = "aarch64" }
 
 [verify]
-# dust outputs "Dust X.Y.Z" without v prefix
 command = "dust --version"
 pattern = "Dust"
