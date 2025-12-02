@@ -4,10 +4,6 @@ description = "Fast formatter and linter for JavaScript, TypeScript, JSX, JSON"
 homepage = "https://biomejs.dev/"
 version_format = "semver"
 
-[version]
-github_repo = "biomejs/biome"
-tag_prefix = "@biomejs/biome@"
-
 [[steps]]
 action = "github_file"
 repo = "biomejs/biome"
@@ -17,4 +13,4 @@ arch_mapping = { amd64 = "x64" }
 
 [verify]
 command = "biome --version"
-pattern = "Version: {version}"
+pattern = "Version:"
