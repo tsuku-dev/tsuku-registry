@@ -4,9 +4,6 @@ description = "Turborepo - High-performance build system for JavaScript and Type
 homepage = "https://turbo.build/repo"
 version_format = "semver"
 
-[version]
-github_repo = "vercel/turbo"
-
 [[steps]]
 action = "npm_install"
 package = "turbo"

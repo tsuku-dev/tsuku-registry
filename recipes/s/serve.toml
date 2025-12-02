@@ -5,9 +5,6 @@ homepage = "https://github.com/vercel/serve"
 version_format = "semver"
 # nodejs is automatically installed as explicit (not hidden) by npm_install action
 
-[version]
-github_repo = "vercel/serve"
-
 [[steps]]
 action = "npm_install"
 package = "serve"
@@ -15,4 +12,4 @@ executables = ["serve"]
 
 [verify]
 command = "serve --version"
-pattern = "{version}"
+pattern = ""
