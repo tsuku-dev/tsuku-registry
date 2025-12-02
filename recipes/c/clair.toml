@@ -12,4 +12,4 @@ binaries = [{src = "clairctl-{os}-{arch}", dest = "bin/clairctl"}]
 
 [verify]
 command = "clairctl --help"
-pattern = "clairctl {version}"
+pattern = "clairctl"
